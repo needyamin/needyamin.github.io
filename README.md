@@ -1,3 +1,6 @@
+---
+title-heading: false
+---
 
 <style><!--
 
