@@ -1,6 +1,10 @@
 
 <style><!--
 
+header {
+  display: none;
+}
+
 html, body, .section, .widget, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -75,7 +79,7 @@ background: #f5f5f5;
 
 /* ######## Wrapper Css ######################### */
 #outer-wrapper{max-width:100%;margin:0 auto;background-color:#f5f5f5;box-shadow:0 0 5px RGBA(0, 0, 0, 0.2)}
-.row{width:1170px}
+.row{width:auto;}
 #content-wrapper {
 margin: 0 auto;
 padding: 20px 0 30px;
@@ -933,7 +937,7 @@ document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(1995
 <div class='card-content'>
 <!-- ABOUT PARAGRAPH -->
 <p>
-    I&#8217;m Yamin, web developer with advance programming experience specializing in frontend and backend development. <br/> Having an in-depth knowledge including advanced Python3, PHP7, MySQLi, SQLite, JavaScript and Cyber Security Field. <br/> I do all kind of pentesting specifically linux and windows based.
+    I&#8217;m Yamin, web developer with advance programming experience specializing in frontend and backend development. Having an in-depth knowledge including advanced Python3, PHP7, MySQLi, SQLite, JavaScript and Cyber Security Field. I do all kind of pentesting specifically linux and windows based.
     </p>
 </div>
 <div style='clear: both;'></div>
