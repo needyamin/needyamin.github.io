@@ -1,10 +1,7 @@
----
-title-heading: false
----
 
 <style><!--
 
-header {
+header{
   display: none;
 }
 
