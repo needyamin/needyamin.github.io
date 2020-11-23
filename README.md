@@ -823,9 +823,6 @@ position: relative;
 -->
 </style>
 
-</head>
-
-
 <body class='index'>
 <div id="outer-wrapper" class="index home">
 <div class='scroll-header' id='head-trigger'>
@@ -940,6 +937,7 @@ document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(1995
     </p>
 </div>
 <div style='clear: both;'></div>
+    
 <div class='card-action' id='about-btn'>
 <!-- BUTTONS -->
 <div class='about-btn'>
@@ -951,3 +949,5 @@ document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(1995
 </div>
 </div>
 </div>
+
+
