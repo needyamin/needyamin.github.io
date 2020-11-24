@@ -157,7 +157,7 @@ width: 100%;
 position: relative;
 height:380px;
 overflow:hidden;
-background: #1976D2 url(https://needyamin.s3.amazonaws.com/user1/bg.gif) no-repeat;
+background: #1976D2 url() no-repeat;
 background-attachment: fixed;
 background-size: cover;
 background-position:bottom center;
