@@ -30,13 +30,17 @@
 <h3 class='profile-position'>Web Programmer</h3>
 </div>
 <div class='needyamin-author-box-text-details'>
+    
+    
 <ul class='profile-list'>
+    
 <li class='clearfix'>
 <div class='yamin-author-box'>
 <strong class='list-title'>Full Name</strong>
 <span class='cont' title='Bangladeshi'> Md. Yamin Hossain <a href='https://www.google.com/search?q=Bangladesh' target='_blank' title='Bangladeshi'><img alt='UpWork' class='yamin-author-box-image-name' src='img/bangladesh.gif'/></a></span>
 </div>
 </li>
+    
 <li class='clearfix'>
 <strong class='list-title'>Born</strong>
 <span class='cont'> November 15, 1995 (<font color='black' id='needyamin_age'>
@@ -44,14 +48,20 @@
 <font color='black'>Years</font>)</span>
 </li>
 
-<!-- javascript age calculator start (echo "needyaminage")-->
+<!-- javascript age calculator-->
 <script>
 function calculate_age(dob) { 
     var diff_ms = Date.now() - dob.getTime();
     var age_dt = new Date(diff_ms); 
-    return Math.abs(age_dt.getUTCFullYear() - 1970);
+    return Math.abs(age_dt.getUTCFullYear() - 1995);
     }
-document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(1995, 11, 15))
+/* current date; */    
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = yyyy + ',' + mm + ',' + dd;    
+document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(today)) /*today*/
 </script>
 <!-- javascript age calculator end-->
 
@@ -335,6 +345,49 @@ transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
 </div>
 </div>
 </div>
+    
+    
+    
+    
+    
+<!-- blogger api start-->        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>   
+<script>$.ajax("https://www.googleapis.com/blogger/v3/blogs/4136930891022846797/posts?callback=handleResponse&key=AIzaSyC-_Wi5d_YEd6cyT1gHhUVNq7e3jOYjt9U")
+
+function handleResponse(response) {
+  //var post_number = Object.keys(response.items).length; //number of posts
+  for (i = 0; i < response.items.length; i++) {
+    var titleHtml = '<a href="' + response.items[i].url + '" class="post" target="_blank"><p>' + (i + 1) + '. ' + response.items[i].title + '</a></div>';
+    
+      
+      
+    $('#content').append(titleHtml);
+  }
+}</script> 
+    
+<div class='needyamin-author-details wow slideInUp row' style='visibility: visible;animation-delay: 1.5s; padding: 20px; text-align: center;'>      
+    
+    <div id="content"></div>   
+    
+    </div>      
+<!-- blogger api end-->    
+    
+    
+    
+    
+    
+<div class='needyamin-author-details wow slideInUp row' style='visibility: visible;animation-delay: 1.5s; padding: 20px; text-align: center;'>    
+    
+    <form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="EYMKSSZ2BWMF6" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
+    </div>
+    
+    
+    
+    
     
 </body>
 </html>
