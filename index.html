@@ -8,6 +8,7 @@
   <meta name="author" content="Md. Yamin Hossain">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet">
+  <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.css' integrity='sha512-bf5lgyUrZOfPh94XyXFK4+2062lAMQFAfxUTVkOAHZ7R3XQ0tY+TUSkbqt8sjFsq0hVMKvGT/1P39c+vKwesTQ==' referrerpolicy='no-referrer' rel='stylesheet'/>
   <link rel="icon" href="img/needyamin.jpg" type="image/gif" sizes="16x16"> 
 </head> 
    
@@ -49,20 +50,7 @@
 </li>
 
 <!-- javascript age calculator-->
-<script>
-function calculate_age(dob) { 
-    var diff_ms = Date.now() - dob.getTime();
-    var age_dt = new Date(diff_ms); 
-    return Math.abs(age_dt.getUTCFullYear() - 1995);
-    }
-/* current date; */    
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-today = yyyy + ',' + mm + ',' + dd;    
-document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(today)) /*today*/
-</script>
+<script src="js/age.js"></script> 
 <!-- javascript age calculator end-->
 
 <li class='clearfix'>
@@ -98,206 +86,10 @@ document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(toda
 </li>
 </ul>
 
-    <style>/**
- * Tooltip Styles
- */
 
-/* Base styles for the element that has a tooltip */
-[data-tooltip],
-.tooltip {
-  position: relative;
-  cursor: pointer;
-}
-
-/* Base styles for the entire tooltip */
-[data-tooltip]:before,
-[data-tooltip]:after,
-.tooltip:before,
-.tooltip:after {
-  position: absolute;
-  visibility: hidden;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition: 
-  opacity 0.2s ease-in-out,
-visibility 0.2s ease-in-out,
--webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
--moz-transition:    
-opacity 0.2s ease-in-out,
-visibility 0.2s ease-in-out,
--moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-transition:         
-opacity 0.2s ease-in-out,
-visibility 0.2s ease-in-out,
-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform:    translate3d(0, 0, 0);
-  transform:         translate3d(0, 0, 0);
-  pointer-events: none;
-}
-
-/* Show the entire tooltip on hover and focus */
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after,
-[data-tooltip]:focus:before,
-[data-tooltip]:focus:after,
-.tooltip:hover:before,
-.tooltip:hover:after,
-.tooltip:focus:before,
-.tooltip:focus:after {
-  visibility: visible;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-}
-
-/* Base styles for the tooltip's directional arrow */
-.tooltip:before,
-[data-tooltip]:before {
-  z-index: 1001;
-  border: 6px solid transparent;
-  background: transparent;
-  content: "";
-}
-
-/* Base styles for the tooltip's content area */
-.tooltip:after,
-[data-tooltip]:after {
-  z-index: 1000;
-  padding: 8px;
-  width: 180px;
-  background-color: #000;
-  background-color: hsla(0, 0%, 20%, 0.9);
-  color: #fff;
-  content: attr(data-tooltip);
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-/* Directions */
-
-/* Top (default) */
-[data-tooltip]:before,
-[data-tooltip]:after,
-.tooltip:before,
-.tooltip:after,
-.tooltip-top:before,
-.tooltip-top:after {
-  bottom: 100%;
-  left: 50%;
-}
-
-[data-tooltip]:before,
-.tooltip:before,
-.tooltip-top:before {
-  margin-left: -6px;
-  margin-bottom: -12px;
-  border-top-color: #000;
-  border-top-color: hsla(0, 0%, 20%, 0.9);
-}
-
-/* Horizontally align top/bottom tooltips */
-[data-tooltip]:after,
-.tooltip:after,
-.tooltip-top:after {
-  margin-left: -80px;
-}
-
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after,
-[data-tooltip]:focus:before,
-[data-tooltip]:focus:after,
-.tooltip:hover:before,
-.tooltip:hover:after,
-.tooltip:focus:before,
-.tooltip:focus:after,
-.tooltip-top:hover:before,
-.tooltip-top:hover:after,
-.tooltip-top:focus:before,
-.tooltip-top:focus:after {
-  -webkit-transform: translateY(-12px);
-  -moz-transform:    translateY(-12px);
-  transform:         translateY(-12px); 
-}
-
-
-
-/* Bottom */
-.tooltip-bottom:before,
-.tooltip-bottom:after {
-  top: 1080%;
-  bottom: auto;
-  left: 50%;
-  text-align: center;
-}
-
-
-        
-.tooltip-bottom:before {
-  text-align: center;
-  margin-top: -12px;
-  margin-bottom: 0;
-  border-top-color: transparent;
-  border-bottom-color: #000;
-  border-bottom-color: hsla(0, 0%, 20%, 0.9);
-}
-
-.tooltip-bottom:hover:before,
-.tooltip-bottom:hover:after,
-.tooltip-bottom:focus:before,
-.tooltip-bottom:focus:after {
-  -webkit-transform: translateY(12px);
-  -moz-transform:    translateY(12px);
-  transform:         translateY(12px); 
-}
-
-
-        
-        
-/* Right */
-.tooltip-right:before,
-.tooltip-right:after {
-  bottom: 50%;
-  left: 100%;
-}
-
-.tooltip-right:before {
-  margin-bottom: 0;
-  margin-left: -12px;
-  border-top-color: transparent;
-  border-right-color: #000;
-  border-right-color: hsla(0, 0%, 20%, 0.9);
-}
-
-.tooltip-right:hover:before,
-.tooltip-right:hover:after,
-.tooltip-right:focus:before,
-.tooltip-right:focus:after {
-  -webkit-transform: translateX(12px);
-  -moz-transform:    translateX(12px);
-  transform:         translateX(12px); 
-}
-
-/* Move directional arrows down a bit for left/right tooltips */
-.tooltip-left:before,
-.tooltip-right:before {
-  top: 3px;
-}
-
-/* Vertically center tooltip content for left/right tooltips */
-.tooltip-left:after,
-.tooltip-right:after {
-  margin-left: 0;
-  margin-bottom: -16px;
-}
-</style>
-    
-    
-    
-</div>
-<div style='clear: both;'></div>
-</div></div>
+<link href="css/tooltip.css" rel="stylesheet">
+ 
+</div><div style='clear: both;'></div></div></div>
     
     
 <div style='clear: both;'></div>
@@ -319,12 +111,7 @@ transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
     
 
 </ul>
-</div>
-</div></div>
-</div>
-</div>
-</div>
-</div>
+</div></div></div></div></div></div></div>
     
     
 <div style='clear: both;'></div>
@@ -333,8 +120,7 @@ transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
 <!-- ABOUT PARAGRAPH -->
 <p>A full stack web developer specializing in frontend and backend development. Having an in-depth knowledge including Python, PHP, SQL, JavaScript, and Cyber Security Field. 
 I know the core of principle programming languages and it helps me to create dynamic web applications. Very Comfortable with GIT and the command line interface (CLI). Familiar with Linux and Windows environment OS. I have been developing web applications using the latest technologies and frameworks with a proven track record. Also, I do web application penetration tests. 
-  
- </p>
+</p>
 </div>
     
 <div style='clear: both;'></div>
@@ -347,48 +133,34 @@ I know the core of principle programming languages and it helps me to create dyn
 </div>
 </div>
     
-    
-    
-    
+   
     
 <!-- blogger api start-->        
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>   
-<script>$.ajax("https://www.googleapis.com/blogger/v3/blogs/4136930891022846797/posts?callback=handleResponse&key=AIzaSyC-_Wi5d_YEd6cyT1gHhUVNq7e3jOYjt9U")
-
-function handleResponse(response) {
-  //var post_number = Object.keys(response.items).length; //number of posts
-  for (i = 0; i < response.items.length; i++) {
-    var titleHtml = '<a href="' + response.items[i].url + '" class="post" target="_blank"><p>' + (i + 1) + '. ' + response.items[i].title + '</a></div>';
-    
-      
-      
-    $('#content').append(titleHtml);
-  }
-}</script> 
-    
-<div class='needyamin-author-details wow slideInUp row' style='visibility: visible;animation-delay: 1.5s; padding: 20px; text-align: center;'>      
-    
-    <div id="content"></div>   
-    
-    </div>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/portfolio.js"></script> 
+<div class='needyamin-author-details wow slideInUp row' style='visibility: visible;animation-delay: 1.5s; padding: 20px; text-align: center;'>
+<h1 style="text-align:center; padding:10px;">My Projects</h1>
+	
+	<table id="content" border='1px' width="100%" >
+		<tr> 
+			<th style="text-align:center;">SR. <i aria-hidden="true" class="fa fa-angle-double-down"></i></th> 
+			<th style="text-align:center;">GitHub <i aria-hidden="true" class="fa fa-angle-double-down"></i></th> 
+			<th style="text-align:center;">Project Name <i aria-hidden="true" class="fa fa-angle-double-down"></i></th> 
+			<th style="text-align:center;">Publish Date <i aria-hidden="true" class="fa fa-angle-double-down"></i></th> 
+			</tr></table>
+	
+	</div>      
 <!-- blogger api end-->    
-    
-    
-    
-    
+  
     
 <div class='needyamin-author-details wow slideInUp row' style='visibility: visible;animation-delay: 1.5s; padding: 20px; text-align: center;'>    
-    
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
+<form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="hosted_button_id" value="EYMKSSZ2BWMF6" />
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
-    </div>
+</div>
     
-    
-    
-    
-    
+
 </body>
 </html>
