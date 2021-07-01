@@ -213,7 +213,7 @@ width:20px;
 margin-left:5px;
 }
 .yamin-author-box-image-name{
-width:50px;
+min-width:50px;
 margin-top: -25px;
 margin-left:5px;
 }
