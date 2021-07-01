@@ -1,3 +1,5 @@
-# needyamin.github.io
-Welcome to Yamin's github page.
+# I'm Yamin | Web Programmer & Penetrator
+Welcome to my github page/portfolio website.
+https://needyamin.github.io/
+
 
