@@ -1,3 +1,40 @@
+/* START ANIMATED IMAGE */
+.me {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  position: relative;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes example {
+  0%   {background-color:white; left:0px; top:0px;}
+  25%  {background-color:#FFFF99; left:0px; top:0px;}
+  50%  {background-color:skyblue; left:0px; top:0px;}
+  75%  {background-color:#90ee90; left:0px; top:0px;}
+  100% {background-color:white; left:0px; top:0px;}
+}
+
+/* END ANIMATED IMAGE */
+
+/* START TABLE LOOP */
+table, td, tr {border: 1px solid skyblue;padding:5px;} 
+@media screen and (max-width:384px){
+content,table,td,tr{display:none;} 
+.exx,.exx3,.exx4,.needyaminX,.tooltip-bottom{display:none;}
+}
+@media screen and (max-width:414px){
+#mbxc{display:none;} 
+}
+/* END TABLE LOOP */
+
+
+
 html, body, .section, .widget, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
