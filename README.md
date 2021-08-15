@@ -4,10 +4,10 @@ https://needyamin.github.io/
 
 
 # Technology Used
-#HTML
+> HTML
 
-#CSS
+> CSS
 
-#JavaScript
+> JavaScript
 
-#Blogger API
+> Blogger API
