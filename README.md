@@ -1,7 +1,7 @@
-# I'm Yamin | Web Programmer & Penetrator
+# I'm Yamin | Full Stack Web Developer &  CyberSecurity Expert
+
 Welcome to my github page/portfolio website.
 https://needyamin.github.io/
-
 
 # Technology Used
 > HTML
