@@ -24,7 +24,7 @@
 
 /* START TABLE LOOP */
 table, td, tr {border: 1px solid skyblue;padding:5px;} 
-@media screen and (max-width:320px){
+@media screen and (max-width:384px){
 content,table,td,tr{display:none;} 
 .exx,.exx3,.exx4,.needyaminX,.tooltip-bottom{display:none;}
 }
