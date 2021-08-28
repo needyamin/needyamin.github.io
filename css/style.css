@@ -28,7 +28,7 @@ table, td, tr {border: 1px solid skyblue;padding:5px;}
 content,table,td,tr{display:none;} 
 .exx,.exx3,.exx4,.needyaminX,.tooltip-bottom{display:none;}
 }
-@media screen and (max-width:414px){
+@media screen and (max-width:360px){
 #mbxc{display:none;} 
 }
 /* END TABLE LOOP */
