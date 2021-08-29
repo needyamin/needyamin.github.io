@@ -1,4 +1,4 @@
-# I'm Yamin | Full Stack Web Developer &  CyberSecurity Expert
+# I'm Yamin | Full Stack Web Developer
 
 Welcome to my github page/portfolio website.
 https://needyamin.github.io/
