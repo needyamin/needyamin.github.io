@@ -5,7 +5,7 @@ function handleResponse(response) {
     var titleHtml = '<tr> <td style="padding:10px;text-align:center;"> ' + (i + 1) + '. </td> <td style="padding:10px;text-align:center;" id="mbxc"><a href="https://github.com/needyamin"><span class="fa fa-github"></span></a></td> <td style="padding:10px;"><a href="' + response.items[i].url + '" class="post" target="_blank"> ' + response.items[i].title + '</a></td> <td style="padding:10px;" id="mbxc"><a href="' + response.items[i].url + '" class="post" target="_blank"> ' + response.items[i].labels + '</a></td></tr>';
     $('#content').append(titleHtml);  
   }
-  
-$('#content').append(titleHtml);  
-  
+    
 }
+$('#content').append(titleHtml);  
+
