@@ -7,5 +7,6 @@ function handleResponse(response) {
   }
     
 }
+
 $('#content').append(titleHtml);  
 
