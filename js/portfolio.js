@@ -7,6 +7,6 @@ function handleResponse(response) {
   }
     
 }
-
+//OutSpace
 $('#content').append(titleHtml);  
 
