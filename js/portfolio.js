@@ -1,4 +1,4 @@
-$.ajax("https://www.googleapis.com/blogger/v3/blogs/4136930891022846797/posts?callback=handleResponse&key=AIzaSyC-_Wi5d_YEd6cyT1gHhUVNq7e3jOYjt9U")
+$.ajax("https://www.googleapis.com/blogger/v3/blogs/4136930891022846797/posts?maxResults=20&callback=handleResponse&key=AIzaSyC-_Wi5d_YEd6cyT1gHhUVNq7e3jOYjt9U")
 function handleResponse(response) {
   //var post_number = Object.keys(response.items).length; //number of posts
   for (i = 0; i < response.items.length; i++) {
