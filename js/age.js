@@ -1,12 +1,9 @@
-function calculate_age(dob) { 
-    var diff_ms = Date.now() - dob.getTime();
-    var age_dt = new Date(diff_ms); 
-  
-    return Math.abs(age_dt.getUTCFullYear() - 1970);
-}
+/* Month/Day/Year */	
+var dob = new Date("11/15/1995");
+var month_diff = Date.now() - dob.getTime();
+var age_dt = new Date(month_diff); 
+var year = age_dt.getUTCFullYear();
+var age = Math.abs(year - 1970);
 
-//console.log(calculate_age(new Date(2022, 05, 31)));
-//console.log(calculate_age(new Date(1995, 11, 15)));
-
-//print JS
-document.getElementById("needyamin_age").innerHTML = calculate_age(new Date(1995, 11, 15));
+//print HTML
+document.getElementById("needyamin_age").innerHTML = age;
