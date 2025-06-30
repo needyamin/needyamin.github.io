@@ -551,24 +551,30 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="core/js/age.js"></script>
   
- <!-- GitHub Projects Script -->
 <script type='text/javascript'>
   document.addEventListener('DOMContentLoaded', function () {
     const token = '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'; 
-
     const loadingElement = document.getElementById('loading-projects');
     const projectsContainer = document.getElementById('projects-container');
-    
+
     fetch('https://api.github.com/users/needyamin/repos?per_page=100', {
       headers: {
         'Authorization': 'token ' + token
       }
     })
-    .then(response => response.json())
+    .then(async response => {
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+      return await response.json();
+    })
     .then(repos => {
-      // Hide loading indicator
+      if (!Array.isArray(repos)) {
+        throw new Error('Unexpected API response format');
+      }
+
       loadingElement.style.display = 'none';
-      
+
       const hiddenRepos = [
         'admin-dashboard-with-laravel-11',
         'all-crud-operations',
@@ -586,46 +592,31 @@
       ];
 
       const filtered = repos
-        .filter(repo =>
-          !repo.fork &&
-          !hiddenRepos.includes(repo.name) &&
-          repo.description
-        )
-        .sort((a, b) => b.description.length - a.description.length);
+        .filter(repo => !repo.fork && !hiddenRepos.includes(repo.name) && repo.description)
+        .sort((a, b) => b.description.length - a.description.length)
+        .slice(0, 50);
 
-      const displayLimit = 50;
+      if (filtered.length === 0) {
+        projectsContainer.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No projects found.</p></div>';
+        projectsContainer.style.display = 'flex';
+        return;
+      }
 
-      filtered.slice(0, displayLimit).forEach((repo, index) => {
+      filtered.forEach(repo => {
+        const tags = [repo.language, ...(repo.topics || []).slice(0, 2)].filter(Boolean);
         const projectCard = document.createElement('div');
         projectCard.className = 'col-lg-4 col-md-6';
-
-        let tags = [];
-        if (repo.language) {
-          tags.push(repo.language);
-        }
-        if (repo.topics && repo.topics.length) {
-          tags = tags.concat(repo.topics.slice(0, 2));
-        }
-
         projectCard.innerHTML = `
           <div class="project-card">
             <div class="project-header">
-              <div class="project-icon">
-                <i class="fab fa-github"></i>
-              </div>
+              <div class="project-icon"><i class="fab fa-github"></i></div>
               <div class="project-stats">
-                <span class="stat-item">
-                  <i class="fas fa-star"></i> ${repo.stargazers_count || 0}
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-code-branch"></i> ${repo.forks_count || 0}
-                </span>
+                <span class="stat-item"><i class="fas fa-star"></i> ${repo.stargazers_count || 0}</span>
+                <span class="stat-item"><i class="fas fa-code-branch"></i> ${repo.forks_count || 0}</span>
               </div>
             </div>
             <div class="project-content">
-              <h4 class="project-title">
-                <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-              </h4>
+              <h4 class="project-title"><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
               <p class="project-description">${repo.description}</p>
               <div class="project-tags">
                 ${tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
@@ -636,19 +627,11 @@
                 <i class="fab fa-github me-1"></i>View Project
               </a>
             </div>
-          </div>
-        `;
-
+          </div>`;
         projectsContainer.appendChild(projectCard);
       });
 
-      // Show projects container
-      if (filtered.length > 0) {
-        projectsContainer.style.display = 'flex';
-      } else {
-        projectsContainer.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No projects found.</p></div>';
-        projectsContainer.style.display = 'flex';
-      }
+      projectsContainer.style.display = 'flex';
     })
     .catch(error => {
       console.error('Error fetching GitHub projects:', error);
@@ -656,6 +639,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
