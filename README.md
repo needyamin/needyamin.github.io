@@ -1,13 +1,35 @@
-# I'm Yamin | Full Stack Web Developer
+# Portfolio Website
 
-Welcome to my github page/portfolio website.
+Personal portfolio website for Md. Yamin Hossain - Full Stack Web Developer.
+
+## Live Site
 https://needyamin.github.io/
 
-# Technology Used
-> HTML
+## Technology Used
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome Icons
+- Google Fonts (Inter)
 
-> CSS
+## Features
+- Clean, minimal design
+- Responsive layout
+- Professional portfolio showcasing experience, education, and skills
+- Downloadable CV
+- Privacy policy page
 
-> JavaScript
+## Structure
+```
+├── index.html          # Main portfolio page
+├── privacy.html        # Privacy policy page
+├── YAMiN_CV.pdf       # Resume/CV document
+├── core/
+│   └── img/           # Images and assets
+└── README.md          # This file
+```
 
-> Blogger API
+## Contact
+- Email: mdyamin@gmail.com
+- GitHub: [@needyamin](https://github.com/needyamin)
+- LinkedIn: [needyamin](https://www.linkedin.com/in/needyamin/)
