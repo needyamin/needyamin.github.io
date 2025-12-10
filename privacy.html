@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Md. Yamin Hossain</title>
+  <meta name="description" content="Privacy Policy for Md. Yamin Hossain's Portfolio Website">
   <link rel="icon" href="core/img/YAMiN.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,114 +15,367 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #8b5cf6;
+      --accent: #ec4899;
+      --success: #10b981;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #ffffff;
+      --bg-light: #f8fafc;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #ffffff;
-      color: #1a1a1a;
-      line-height: 1.6;
-      padding: 2rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .container {
-      max-width: 800px;
+    /* Animated Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 50%, #f093fb15 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: all 0.3s;
+    }
+
+    .nav-container {
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #e0e0e0;
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    h2 {
-      font-size: 1.3rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: #2563eb;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      color: #666;
-    }
-
-    a {
-      color: #2563eb;
+    .logo a {
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: inherit;
     }
 
     .back-link {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
       margin-bottom: 2rem;
-      color: #2563eb;
+      transition: all 0.3s;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .back-link i {
+      font-size: 1rem;
+    }
+
+    /* Main Content */
+    .main-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-1);
+      border-radius: 2px;
+    }
+
+    .page-subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .content-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--bg-light);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .content-card h2 i {
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+
+    .content-card p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-card strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .content-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .content-card a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    .last-updated {
+      background: var(--bg-light);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .last-updated i {
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .content-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .content-card h2 {
+        font-size: 1.3rem;
+      }
+
+      .nav-container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-container {
+        padding: 5rem 1rem 2rem;
+      }
+
+      .content-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .page-title {
+        font-size: 1.75rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="back-link">← Back to Home</a>
-    
-    <h1>Privacy Policy</h1>
-    
-    <p><strong>Last Updated:</strong> 2024</p>
+  <div class="bg-animation"></div>
 
-    <h2>Contact Information</h2>
-    <p>
-      If you require any more information or have any questions about our privacy policy, 
-      please feel free to contact us by email at <a href="mailto:needyamin@ansnew.com">needyamin@ansnew.com</a>.
-    </p>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><a href="/">Yamin</a></div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" style="color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem;">Home</a>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Copyright</h2>
-    <p>
-      The content of this website is protected by copyright. The use of content and image material 
-      from this website on other sites requires the express permission of the site owner. 
-      The information in this website has been created with all due care and has been checked for accuracy. 
-      Nevertheless, errors in content or fact cannot be completely ruled out. We give no guarantee and 
-      accept no liability for the accuracy, actuality or completeness of the information provided.
-    </p>
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="page-header">
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-subtitle">Your privacy is important to us</p>
+    </div>
 
-    <h2>Data Protection</h2>
-    <p>
-      Any personal information you give us will be kept confidential and not disclosed to third parties.
-    </p>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
 
-    <h2>Log Files</h2>
-    <p>
-      Like many other websites, this site makes use of log files. The information inside the log files 
-      includes internet protocol (IP) addresses, type of browser, Internet Service Provider (ISP), 
-      date/time stamp, referring/exit pages, and number of clicks to analyze trends, administer the site, 
-      track user's movement around the site, and gather demographic information. IP addresses and other 
-      such information are not linked to any information that is personally identifiable.
-    </p>
+    <div class="last-updated">
+      <i class="far fa-calendar-alt"></i>
+      <span><strong>Last Updated:</strong> 2024</span>
+    </div>
 
-    <h2>Cookies and Web Beacons</h2>
-    <p>
-      This website may use cookies to store information about visitors' preferences, record user-specific 
-      information on which pages the user accesses or visits, and customize web page content based on 
-      visitors' browser type or other information that the visitor sends via their browser.
-    </p>
+    <div class="content-card">
+      <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+      <p>
+        If you require any more information or have any questions about our privacy policy, 
+        please feel free to contact us by email at <a href="mailto:needyamin@ansnew.com">needyamin@ansnew.com</a>.
+      </p>
+    </div>
 
-    <h2>Third-Party Services</h2>
-    <p>
-      This website may use third-party services for analytics and advertising. These services may use 
-      cookies and web beacons to collect information. We have no access to or control over these cookies 
-      that are used by third-party advertisers.
-    </p>
-    <p>
-      You should consult the respective privacy policies of these third-party ad servers for more detailed 
-      information on their practices as well as for instructions about how to opt-out of certain practices.
-    </p>
+    <div class="content-card">
+      <h2><i class="fas fa-copyright"></i> Copyright</h2>
+      <p>
+        The content of this website is protected by copyright. The use of content and image material 
+        from this website on other sites requires the express permission of the site owner. 
+        The information in this website has been created with all due care and has been checked for accuracy. 
+        Nevertheless, errors in content or fact cannot be completely ruled out. We give no guarantee and 
+        accept no liability for the accuracy, actuality or completeness of the information provided.
+      </p>
+    </div>
 
-    <h2>Cookie Management</h2>
-    <p>
-      If you wish to disable cookies, you may do so through your individual browser options. More detailed 
-      information about cookie management with specific web browsers can be found at the browsers' respective websites.
-    </p>
+    <div class="content-card">
+      <h2><i class="fas fa-shield-alt"></i> Data Protection</h2>
+      <p>
+        Any personal information you give us will be kept confidential and not disclosed to third parties.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-file-alt"></i> Log Files</h2>
+      <p>
+        Like many other websites, this site makes use of log files. The information inside the log files 
+        includes internet protocol (IP) addresses, type of browser, Internet Service Provider (ISP), 
+        date/time stamp, referring/exit pages, and number of clicks to analyze trends, administer the site, 
+        track user's movement around the site, and gather demographic information. IP addresses and other 
+        such information are not linked to any information that is personally identifiable.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-cookie-bite"></i> Cookies and Web Beacons</h2>
+      <p>
+        This website may use cookies to store information about visitors' preferences, record user-specific 
+        information on which pages the user accesses or visits, and customize web page content based on 
+        visitors' browser type or other information that the visitor sends via their browser.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-network-wired"></i> Third-Party Services</h2>
+      <p>
+        This website may use third-party services for analytics and advertising. These services may use 
+        cookies and web beacons to collect information. We have no access to or control over these cookies 
+        that are used by third-party advertisers.
+      </p>
+      <p>
+        You should consult the respective privacy policies of these third-party ad servers for more detailed 
+        information on their practices as well as for instructions about how to opt-out of certain practices.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-cog"></i> Cookie Management</h2>
+      <p>
+        If you wish to disable cookies, you may do so through your individual browser options. More detailed 
+        information about cookie management with specific web browsers can be found at the browsers' respective websites.
+      </p>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Md. Yamin Hossain. All rights reserved.</p>
+  </footer>
 </body>
 </html>
