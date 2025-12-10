@@ -21,11 +21,11 @@ https://needyamin.github.io/
 
 ## Structure
 ```
-├── index.html          # Main portfolio page
-├── privacy.html        # Privacy policy page
-├── YAMiN_CV.pdf       # Resume/CV document
+├── index.html         # Main portfolio page
+├── privacy.html       # Privacy policy page
 ├── core/
 │   └── img/           # Images and assets
+│   └── YAMiN_CV.pdf   # Resume/CV document
 └── README.md          # This file
 ```
 
