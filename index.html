@@ -2043,6 +2043,39 @@
           <div class="tech-tags"><span class="tech-tag">Python</span></div>
           <a href="https://github.com/needyamin/ANSNEW_TECH_Image2Text" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
         </div>
+        <div class="card project-card">
+          <div class="project-header">
+            <div class="project-title">Onesignal PHP API Push Notification</div>
+            <div class="project-desc">Send push notifications using the OneSignal REST API and core PHP.</div>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag"><i class="far fa-star"></i> 7</span>
+          </div>
+          <a href="https://github.com/needyamin/onesignal-php-api-push-notification" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="card project-card">
+          <div class="project-header">
+            <div class="project-title">M3U8 Stream Downloader Browser Extension</div>
+            <div class="project-desc">A Chrome/Firefox extension that detects and downloads videos, audio, and streaming content including MP4, MP3, M3U8, AVI, MKV, and FLAC.</div>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag"><i class="far fa-star"></i> 7</span>
+          </div>
+          <a href="https://github.com/needyamin/m3u8-stream-downloader-browser-extension" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="card project-card">
+          <div class="project-header">
+            <div class="project-title">Blogger API V3 ANSNEW App</div>
+            <div class="project-desc">Blogger API V3 Android app for ANSNEW.</div>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag"><i class="far fa-star"></i> 4</span>
+          </div>
+          <a href="https://github.com/needyamin/Blogger-API-V3---ANSNEW-APP" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </section>
@@ -2438,9 +2471,15 @@
       };
 
       try {
-        const res = await fetch(`https://api.github.com/users/${user}/repos?per_page=100&sort=updated`);
-        if (!res.ok) throw new Error('Failed to fetch');
-        const repos = await res.json();
+        const repos = [];
+        for (let page = 1; page <= 3; page++) {
+          const res = await fetch(`https://api.github.com/users/${user}/repos?per_page=100&page=${page}&type=owner&sort=updated`);
+          if (!res.ok) throw new Error('Failed to fetch');
+          const batch = await res.json();
+          repos.push(...batch);
+          if (batch.length < 100) break;
+        }
+
         const byName = Object.fromEntries(repos.map(repo => [repo.name, repo]));
 
         const featuredRepos = featured.map(project => byName[project.name] || {
@@ -2452,7 +2491,7 @@
         });
 
         const topRated = repos
-          .filter(repo => !repo.fork && repo.description && !featuredNames.has(repo.name) && !hidden.has(repo.name))
+          .filter(repo => !repo.fork && !featuredNames.has(repo.name) && !hidden.has(repo.name))
           .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
           .slice(0, 3);
 
@@ -2461,7 +2500,9 @@
           container.appendChild(renderCard(repo, formatTitle(repo.name)));
         });
 
-        container.querySelectorAll('.card').forEach(card => observer.observe(card));
+        if (typeof observer !== 'undefined') {
+          container.querySelectorAll('.card').forEach(card => observer.observe(card));
+        }
       } catch (e) {
         console.error('Error fetching projects:', e);
       }
@@ -2485,11 +2526,17 @@
       observer.observe(el);
     });
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
+    // Initialize even if the script runs after DOMContentLoaded
+    const initPortfolio = () => {
       fetchGitHubStats();
       fetchProjects();
-    });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPortfolio);
+    } else {
+      initPortfolio();
+    }
   </script>
 </body>
 </html>
