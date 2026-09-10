@@ -23,9 +23,9 @@ https://needyamin.github.io/
 ```
 ├── index.html         # Main portfolio page
 ├── privacy.html       # Privacy policy page
-├── core/
-│   └── img/           # Images and assets
-│   └── YAMiN_CV.pdf   # Resume/CV document
+├── assets/
+│   ├── img/           # Favicon and images
+│   └── cv/Md_Yamin_Hossain.pdf   # Resume/CV document
 └── README.md          # This file
 ```
 
